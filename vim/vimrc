@@ -1,4 +1,9 @@
+set encoding=utf-8
 set nocompatible              
+
+set clipboard=unnamed
+
+
 set textwidth=80
 set colorcolumn=+1
 set backspace=2
@@ -22,6 +27,7 @@ set autoindent
 set splitbelow
 set splitright
 set guicursor+=n-v-c:blinkon0
+
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-h> <C-w>h
@@ -29,24 +35,10 @@ nnoremap <C-l> <C-w>l
 
 filetype off
 
-if has('win32')
-    set runtimepath=$HOME/.vim, $VIM/vimfiles, $VIMRUNTIME, $VIM/vimfiles/after, $HOME/.vim/after
-endif
-
-"If plug-vim does not exist, download it.
-if empty(glob('$HOME/.vim/autoload/plug.vim'))
-    silent !curl -fLo $HOME/.vim/autoload/plug.vim --create-dirs
-        \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-    autocmd VimEnter * PlugInstall | source $MYVIMRC
-endif
-
-call plug#begin('$HOME/.vim/bundle')
-Plug 'tpope/vim-fugitive'
+call plug#begin('$HOME/vimfiles/bundle')
 Plug 'scrooloose/nerdTree'
 Plug 'tomasr/molokai'
-Plug 'kien/ctrlp.vim'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
+Plug 'Valloric/YouCompleteMe'
 call plug#end()            
 
 colorscheme molokai
@@ -58,6 +50,3 @@ if has ("gui_running")
         set guifont=Consolas:h12
     endif
 endif
-
-let g:airline_theme='simple'
-let g:airline_powerline_fonts=0

@@ -3,7 +3,6 @@ set nocompatible
 
 set clipboard=unnamed
 
-
 set textwidth=80
 set colorcolumn=+1
 set backspace=2
@@ -28,6 +27,11 @@ set splitbelow
 set splitright
 set guicursor+=n-v-c:blinkon0
 
+set guioptions-=m 
+set guioptions-=T
+set guioptions-=r
+set guioptions-=L
+
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-h> <C-w>h
@@ -37,11 +41,11 @@ filetype off
 
 call plug#begin('$HOME/vimfiles/bundle')
 Plug 'scrooloose/nerdTree'
-Plug 'tomasr/molokai'
-Plug 'Valloric/YouCompleteMe'
+Plug 'sickill/vim-monokai'
 call plug#end()            
 
-colorscheme molokai
+syntax enable
+colorscheme monokai
 
 if has ("gui_running")
     if has("gui_gtk2")

@@ -37,15 +37,25 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-h> <C-w>h
 nnoremap <C-l> <C-w>l
 
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
 filetype off
 
 call plug#begin('$HOME/vimfiles/bundle')
 Plug 'scrooloose/nerdTree'
-Plug 'sickill/vim-monokai'
+Plug 'scrooloose/syntastic'
+Plug 'tomasr/molokai'
 call plug#end()            
 
 syntax enable
-colorscheme monokai
+colorscheme molokai
 
 if has ("gui_running")
     if has("gui_gtk2")

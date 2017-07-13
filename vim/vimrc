@@ -10,6 +10,7 @@ set number
 set nobackup
 set nowritebackup
 set noswapfile
+set noundofile
 set history=50
 set laststatus=2
 set ruler

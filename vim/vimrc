@@ -1,10 +1,8 @@
 set encoding=utf-8
-set nocompatible              
+set nocompatible                                                                
 
 set clipboard=unnamed
 
-set textwidth=80
-set colorcolumn=+1
 set backspace=2
 set number
 set nobackup
@@ -33,30 +31,39 @@ set guioptions-=T
 set guioptions-=r
 set guioptions-=L
 
+set cursorline
+set cursorcolumn
+
+
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-h> <C-w>h
 nnoremap <C-l> <C-w>l
 
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-
 filetype off
 
 call plug#begin('$HOME/vimfiles/bundle')
 Plug 'scrooloose/nerdTree'
-Plug 'scrooloose/syntastic'
-Plug 'tomasr/molokai'
+Plug 'altercation/vim-colors-solarized'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 call plug#end()            
 
+function! StartUp()
+    if 0 == argc()
+        NERDTree
+    end
+endfunction
+
+autocmd VimEnter * call StartUp()
+
 syntax enable
-colorscheme molokai
+colorscheme solarized
+set background=dark
+let g:solarized_termcolors=256
+
+let g:airline_powerline_fonts = 1
+set t_Co=256
 
 if has ("gui_running")
     if has("gui_gtk2")

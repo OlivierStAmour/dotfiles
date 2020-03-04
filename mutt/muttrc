@@ -1,0 +1,19 @@
+set ssl_starttls=yes
+set ssl_force_tls=yes
+
+set imap_user="olivierstamour0952@gmail.com"
+#set imap_pass=""
+set certificate_file=~/.mutt/certificates
+set editor=vim
+
+set folder="imaps://imap.gmail.com:993/"
+set spoolfile="+INBOX"
+set move = no
+set copy = no
+set text_flowed = yes
+set mail_check = 5
+set timeout = 10
+auto_view text/html
+
+unset imap_passive
+unset record

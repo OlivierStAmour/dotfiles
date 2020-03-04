@@ -4,6 +4,7 @@ DOTFILES_DIR="$(cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd)"
 
 # vim
 ln -sfv "$DOTFILES_DIR/vim/vimrc" ~/.vimrc
+ln -sfv "$DOTFILES_DIR/tmux/tmux.conf" ~/.tmux.conf
 
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim

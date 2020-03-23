@@ -58,12 +58,10 @@ endfunction
 autocmd VimEnter * call StartUp()
 
 syntax enable
+let g:solarized_termcolors=256
 colorscheme solarized
 set background=dark
-let g:solarized_termcolors=256
-
 let g:airline_powerline_fonts = 1
-set t_Co=256
 
 if has ("gui_running")
     if has("gui_gtk2")
